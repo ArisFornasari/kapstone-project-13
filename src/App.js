@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+import Navbar from "./components/Navbar";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+
 import Search from './components/Search'
 import Results from './components/Results'
 import Popup from './components/Popup'
@@ -55,13 +58,21 @@ const closePopup = () => {
 
   return (
     <div className="App">
+      <main>
+
+      <Router>
+     <Navbar/> 
+     <switch>
+       <Route path="/" exact/>
+     </switch>
+      
       <header>
         <h1>Movie Database</h1>
       </header>
-      <main>
         <Search handleInput={handleInput} search={search} />
 
         <Results results={state.results} openPopup={openPopup} />
+     </Router>
         
         {(typeof state.selected.Title != "undefined") ? <Popup selected={state.selected} closePopup=
         {closePopup} /> : false}     
