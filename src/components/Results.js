@@ -1,14 +1,15 @@
-import React from 'react'
+import React from "react";
+import Result from "./Result";
 
-import Result from './Result'
 function Results({ results, openPopup }) {
   return (
     <section className="results">
-      {results && results.map( result => (
-        <Result key={result.imdbID}result={result} openPopup={openPopup} />
-      ))}
+      {results &&
+        results.map((result) => (
+          <Result key={result.imdbID} result={result} openPopup={openPopup} />
+        ))}
     </section>
-  )
+  );
 }
 
-export default Results
+export default Results;

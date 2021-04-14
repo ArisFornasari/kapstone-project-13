@@ -1,17 +1,17 @@
-import React from 'react'
+import React from "react";
 
-function Search(props) {
+function Search({ handleInput, search }) {
   return (
     <section className="searchbox-wrap">
-        <input type="text" 
-        placeholder="Search our database..." 
+      <input
+        type="text"
+        placeholder="Search our database..."
         className="searchbox"
-        onChange={props.handleInput} 
-        onKeyPress={props.search}
-        
+        onChange={handleInput}
+        onKeyPress={search}
       />
-   </section>
-  )
+    </section>
+  );
 }
 
-export default Search
+export default Search;
