@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Search from "./components/Search";
 import Results from "./components/Results";
 import Popup from "./components/Popup";
+import Signup from "./components/Signup";
 
 function App() {
   const [state, setState] = useState({
@@ -62,6 +63,7 @@ function App() {
           <Navbar />
           <Switch>
             <Route path="/" exact />
+            <Route path="/signup" exact component={Signup} />
           </Switch>
 
           <header>
