@@ -28,6 +28,7 @@ header h1 {
 }
 
 main {
+  color: #888;
   width: 100%;
   margin: 0 auto;
 }

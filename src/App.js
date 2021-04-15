@@ -8,6 +8,7 @@ import Search from "./components/Search";
 import Results from "./components/Results";
 import Popup from "./components/Popup";
 import Signup from "./components/Signup";
+import Signin from "./components/Signin";
 
 function App() {
   const [state, setState] = useState({
@@ -64,6 +65,7 @@ function App() {
           <Switch>
             <Route path="/" exact />
             <Route path="/signup" exact component={Signup} />
+            <Route path="/signin" exact component={Signin} />
           </Switch>
 
           <header>
