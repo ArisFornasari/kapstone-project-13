@@ -54,6 +54,7 @@ export default function Navbar() {
                 Movies
               </Link>
             </li>
+
             <li className="nav-item">
               <Link
                 to="/signup"
