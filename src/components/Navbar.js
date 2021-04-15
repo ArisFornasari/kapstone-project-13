@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import "./Navbar.css";
 import { Button } from "./Button";
 // import Signup from "./Signup";
@@ -24,50 +24,59 @@ export default function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo">
+          <NavLink to="/" className="navbar-logo">
             Kenzie Entertainment APP <i className="fab fa-typo3" />
-          </Link>
+          </NavLink>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
+          
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+              <NavLink to="/home" 
+              activeStyle={ {color: "yellow"}}
+              className="nav-links" onClick={closeMobileMenu}>
                 Home
-              </Link>
+              </NavLink>
             </li>
+           
             <li className="nav-item">
-              <Link
+              <NavLink
                 to="/my-watchlist"
+                activeStyle={ {color: "yellow"}}
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
                 My Watchlist
-              </Link>
+              </NavLink>
             </li>
+           
+           
             <li className="nav-item">
-              <Link
+              <NavLink
                 to="/movies"
+                activeStyle={ {color: "yellow"}}
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
                 Movies
-              </Link>
+              </NavLink>
             </li>
 
             <li className="nav-item">
-              <Link
+              <NavLink
                 to="/signup"
+                activeStyle={ {color: "yellow"}}
                 className="nav-links-mobile"
                 onClick={closeMobileMenu}
               >
                 Sign up
-              </Link>
+              </NavLink>
             </li>
           </ul>
-          <Link to="/signup">
+          <NavLink to="/signup">
             {button && <Button buttonStyle="btn--outline">Sign Up</Button>}
-          </Link>
+          </NavLink>
         </div>
       </nav>
     </>
