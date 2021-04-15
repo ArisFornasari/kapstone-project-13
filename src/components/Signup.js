@@ -48,10 +48,10 @@ function Signup() {
             onChange={(e) => onChange(e)}
             required
           />
-          <small className="form-text">
+          {/* <small className="form-text">
             This site uses Gravatar so if you want a profile image, use a
             Gravatar email
-          </small>
+          </small> */}
         </div>
         <div className="form-group">
           <input
@@ -75,7 +75,7 @@ function Signup() {
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />
       </form>
-      <p className="my-1">
+      <p className="sign-in">
         Already have an account? <a href="login.html">Sign In</a>
       </p>
     </Fragment>
