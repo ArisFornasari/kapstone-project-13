@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {NavLink} from "react-router-dom";
 import "./Navbar.css";
 import { Button } from "./Button";
@@ -18,13 +18,17 @@ export default function Navbar() {
     }
   };
 
+  useEffect(() => {
+    showButton();
+  }, []);
+
   window.addEventListener("resize", showButton);
 
   return (
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <NavLink to="/" className="navbar-logo">
+          <NavLink to="/" className="navbar-logo" onClick={closeMobileMenu}>
             Kenzie Entertainment APP <i className="fab fa-typo3" />
           </NavLink>
           <div className="menu-icon" onClick={handleClick}>

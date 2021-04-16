@@ -66,14 +66,9 @@ function App() {
             <Route path="/" exact />
             <Route path="/signup" exact component={Signup} />
             <Route path="/signin" exact component={Signin} />
+            <Route path="/movies" exact component={Search}/>
           </Switch>
 
-          <header>
-            <h1>Movie Database</h1>
-          </header>
-          <Search handleInput={handleInput} search={search} />
-
-          <Results results={state.results} openPopup={openPopup} />
         </Router>
 
         {typeof state.selected.Title != "undefined" ? (
