@@ -1,7 +1,10 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+import { loginRequest } from "../fetchRequest";
+import { useStore } from "../store";
 
 const Signin = () => {
+  const dispatch = useStore((state) => state.dispatch);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -14,7 +17,9 @@ const Signin = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
+    loginRequest(formData.email, formData.password).then((data) =>
+      dispatch({ type: "LOGIN", payload: data })
+    );
     console.log("Success");
   };
   return (

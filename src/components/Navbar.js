@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { Button } from "./Button";
 // import Signup from "./Signup";
@@ -34,32 +34,12 @@ export default function Navbar() {
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
-          
+
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <NavLink to="/home" 
-              activeStyle={ {color: "yellow"}}
-              className="nav-links" onClick={closeMobileMenu}>
-                Home
-              </NavLink>
-            </li>
-           
-            <li className="nav-item">
-              <NavLink
-                to="/my-watchlist"
-                activeStyle={ {color: "yellow"}}
-                className="nav-links"
-                onClick={closeMobileMenu}
-              >
-                My Watchlist
-              </NavLink>
-            </li>
-           
-           
             <li className="nav-item">
               <NavLink
                 to="/movies"
-                activeStyle={ {color: "yellow"}}
+                activeStyle={{ color: "yellow" }}
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
@@ -69,8 +49,30 @@ export default function Navbar() {
 
             <li className="nav-item">
               <NavLink
+                to="/my-watchlist"
+                activeStyle={{ color: "yellow" }}
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                My Watchlist
+              </NavLink>
+            </li>
+
+            {/* <li className="nav-item">
+              <NavLink
+                to="/movies"
+                activeStyle={{ color: "yellow" }}
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                Movies
+              </NavLink>
+            </li> */}
+
+            <li className="nav-item">
+              <NavLink
                 to="/signup"
-                activeStyle={ {color: "yellow"}}
+                activeStyle={{ color: "yellow" }}
                 className="nav-links-mobile"
                 onClick={closeMobileMenu}
               >
