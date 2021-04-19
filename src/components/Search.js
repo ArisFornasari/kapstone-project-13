@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
 function Search({ handleInput, search }) {
   return (
     <section className="searchbox-wrap">
@@ -10,6 +12,7 @@ function Search({ handleInput, search }) {
         onChange={handleInput}
         onKeyPress={search}
       />
+  
     </section>
   );
 }

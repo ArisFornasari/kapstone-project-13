@@ -1,8 +1,25 @@
 import "../App.scss";
+import React, { useState } from 'react';
+
+
 
 export default function Intro() {
+  
+    const [showIntro, setShowIntro] = useState(true);
+    setTimeout(() => {
+      setShowIntro(false);
+    }, 8000)
+    
+  
+  
+
+  
   return (
-    <div className="App">
+
+    <>
+    { showIntro && (
+
+      <div className="App">
       <input class="retrigger" type="radio" name="rerun" id="retrigger--1" />
       <input
         class="retrigger"
@@ -10,7 +27,7 @@ export default function Intro() {
         name="rerun"
         id="retrigger--2"
         checked="checked"
-      />
+        />
       <div class="bg"></div>
       <div class="buttons">
         <label class="button button--1" for="retrigger--1">
@@ -45,5 +62,7 @@ export default function Intro() {
         </div>
       </div>
     </div>
+  )}
+</>
   );
 }
