@@ -7,6 +7,7 @@ import axios from "axios";
 import Search from "../components/Search";
 
 import Results from "../components/Results";
+import Popup from "./Popup";
 
 
 
@@ -45,12 +46,22 @@ export default function MoviesTab() {
           });
         });
       };
+      const closePopup = () => {
+        setState((prevState) => {
+          return { ...prevState, selected: {} };
+        });
+      };
   
     return (
         <div>
             <header><h1>Movie Database</h1></header>
           <Search handleInput={handleInput} search={search} />
           <Results results={state.results} openPopup={openPopup} />
+          {typeof state.selected.Title != "undefined" ? (
+          <Popup selected={state.selected} closePopup={closePopup} />
+        ) : (
+          false
+        )}
         </div>
     )
 }
