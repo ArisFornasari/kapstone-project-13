@@ -29,7 +29,7 @@ export default function Navbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <NavLink to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            Kenzie Entertainment APP <i className="fab fa-typo3" />
+          <img src="https://fontmeme.com/permalink/210420/bf8b0fdce714b6699debb84acb31e7b6.png"></img> <i className="fab fa-typo3" />
           </NavLink>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
