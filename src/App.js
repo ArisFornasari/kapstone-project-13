@@ -1,4 +1,5 @@
 import "./App.scss";
+import "./App.css";
 import Intro from "./components/Intro";
 import React, { useState } from "react";
 import axios from "axios";
@@ -9,6 +10,7 @@ import Popup from "./components/Popup";
 import Signup from "./components/Signup";
 import Signin from "./components/Signin";
 import MoviesTab from "./components/MoviesTab"
+
 
 function App() {
   const [state, setState] = useState({
