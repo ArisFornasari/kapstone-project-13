@@ -11,5 +11,7 @@ function Results({ results, openPopup }) {
     </section>
   );
 }
-
+//store id on user model
+//map through users watch list
+//querry to db
 export default Results;

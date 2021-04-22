@@ -1,10 +1,13 @@
 import React, { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
-import { loginRequest } from "../fetchRequest";
-import { useStore } from "../store";
+import { Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { login } from "../actions/auth";
+// import { loginRequest } from "../fetchRequest";
 
-const Signin = () => {
-  const dispatch = useStore((state) => state.dispatch);
+// import { useStore } from "../store";
+const Signin = ({ login, isAuthenticated }) => {
+  // const dispatch = useStore((state) => state.dispatch);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -17,11 +20,13 @@ const Signin = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    loginRequest(formData.email, formData.password).then((data) =>
-      dispatch({ type: "LOGIN", payload: data })
-    );
-    console.log("Success");
+    login(email, password);
   };
+
+  //Redirect if logged in
+  if (isAuthenticated) {
+    return <Redirect to="/movies" />;
+  }
   return (
     <Fragment>
       <h1 className="large text-primary">Sign In</h1>
@@ -59,4 +64,13 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+login.PropTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+};
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { login })(Signin);
