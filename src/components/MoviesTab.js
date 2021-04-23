@@ -54,7 +54,7 @@ export default function MoviesTab() {
   return (
     <div>
       <header>
-        <h1>Movie Database</h1>
+        <h1> <img src="https://fontmeme.com/permalink/210423/54ae7669563b07c8272f0d1579872696.png"></img></h1>
       </header>
       <Search handleInput={handleInput} search={search} />
       <Results results={state.results} openPopup={openPopup} />

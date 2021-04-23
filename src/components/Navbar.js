@@ -33,7 +33,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         <div className="navbar-container">
           <NavLink to="/" className="navbar-logo" onClick={closeMobileMenu}>
             <img
-              src="https://fontmeme.com/permalink/210420/bf8b0fdce714b6699debb84acb31e7b6.png"
+              src="https://fontmeme.com/permalink/210423/15f191de4ea6a30dd7d5b26cb9880614.png"
               alt="navbar"
             ></img>{" "}
             <i className="fab fa-typo3" />
